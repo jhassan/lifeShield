@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.header {
+	padding: 10px;
+}
+.main_title {
+	background: #cccccc;
+	color: #ffffff;
+	padding: 10px;
+	font-size: 20px;
+	line-height: 20px;
+}
+.content {
+	padding: 10px;
+	min-height: 100px;
+}
+.footer {
+	padding: 10px;
+	text-align: right;
+}
+.footer a {
+	color: #999999;
+	text-decoration: none;
+}
+.footer a:hover {
+	text-decoration: underline;
+}
+.label_div {
+	width: 120px;
+	float: left;
+	line-height: 28px;
+}
+.input_container ul {
+    width: 221px;
+    border: 1px solid #eaeaea;
+    position: absolute;
+    z-index: 9;
+    background: #f3f3f3;
+    list-style: none;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.input_container ul li {
+	padding: 10px;
+}
+.input_container ul li:hover {
+	background: #eaeaea;
+}
+#country_list_id {
+	display: none;
+}
+
+
