@@ -2,9 +2,9 @@
 
 	$DB_Server = "localhost";
 
-	$DB_Username ="pakcappe_lifeShi";
+	$DB_Username ="root";
 
-	$DB_Password = "@TpvVyE.KV^q";
+	$DB_Password = "";
 
 	$DB_DBName = "pakcappe_lifeShield";
 

@@ -9,18 +9,13 @@
 	$banner_status = $GetRow['banner_status'];
 	}
 ?>
-
 <body>
-
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         <?php include_once('header.php');?>    
-
         <?php include_once('leftsidebar.php');?>     
         </nav>
-
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
