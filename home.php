@@ -1,9 +1,6 @@
-<?php include_once('top.php');
-include_once('config.php');
-//echo($GLOBALS["DB_Server"] . " " . $GLOBALS["DB_Username"] ." ". $GLOBALS["DB_Password"]); die;
-?>
+<?php include_once('top.php'); ?>
 <style>
-[type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after {
+/*[type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after {
     content: '✔';
     position: absolute;
     top: 6px;
@@ -12,9 +9,9 @@ include_once('config.php');
     line-height: 0.8;
     color: #09ad7e;
     transition: all .2s;
-}
+}*/
 </style>
-        <link rel="shortcut icon" href="../favicon.ico">
+        <!-- <link rel="shortcut icon" href="../favicon.ico"> -->
         
         
 <body>

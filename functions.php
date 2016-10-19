@@ -1,15 +1,15 @@
-<?
-
-	//error_reporting(E_ERROR | E_WARNING | E_PARSE);
+<?php
+	
+	error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	error_reporting(0);
-
+	session_start();
 	ini_set("register_globals", 1);
 
-	session_start();
+	
 
 	include_once('config.php');
 
-
+//print_r($_SESSION);
 
 	// open a connection with MySQL server
 
@@ -2479,24 +2479,24 @@
 
 	
 
-	// connect to database
+// 	// connect to database
 
-	//MySQLConnect();
+// 	//MySQLConnect();
 
-	//echo $_SERVER["SCRIPT_NAME"]."==========".$strLoginScriptPath; die;
+// 	//echo $_SERVER["SCRIPT_NAME"]."==========".$strLoginScriptPath; die;
 
-	$strNewLoginx = $_POST['strNewLoginx'];
+// 	$strNewLoginx = $_POST['strNewLoginx'];
 
-	$strNewPassword = $_POST['strNewPassword'];
+// 	$strNewPassword = $_POST['strNewPassword'];
 
 
 
-	// set login / password as session vars
+// 	// set login / password as session vars
 
-	$_SESSION["strLogin"] = $strNewLoginx;
+// 	$_SESSION["strLogin"] = $strNewLoginx;
 
-	$_SESSION["strPassword"] = md5($strNewPassword);
-
+// 	$_SESSION["strPassword"] = md5($strNewPassword);
+// echo "not login user"; die;
 	if(($_SERVER["SCRIPT_NAME"] != $strLoginScriptPath) && (PHP_SAPI != "cli"))
 
 	{
@@ -2527,7 +2527,7 @@
 
 		{
 
-		
+		//echo "login user"; die;
 
 		
 
