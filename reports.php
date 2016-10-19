@@ -1,12 +1,5 @@
 <?php include_once('top.php');
-//	$strRow = "";
-//	if(!empty($_GET['id']))
-//	{
-//    	$GetID = mysql_real_escape_string($_GET['id']);	
-//    	$Where = " designation_id = '".(int)$GetID."'";
-//    	$GetRow = GetRecord("designation", $Where);
-//    	$depart_name = $GetRow['depart_name'];
-//	}
+//	include_once('functions.php');
 ?>
 
 <body>
@@ -37,7 +30,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                
-                                <?php ArrayComboBox("records", $report_type, $records, true, "", "---Select Type---", "required form-control", "");?>
+                                <?php //ArrayComboBox("records", $report_type, $records, true, "", "---Select Type---", "required form-control", "");?>
                                 <div class="clear"></div>
                                 <div class="row">&nbsp;</div>
                                 <!--Employee Form-->
@@ -86,7 +79,7 @@
                                         <?php //TextField("Whom to meet", "whome_to_meet", $whome_to_meet, "50","3","form-control required"); ?>
                                         <div class="form-group col-lg-3 input_container">
                                         <label> Whom to meet </label>
-                                            <input type="text" id="whome_to_meet" name="whome_to_meet" class="form-control" onKeyUp="autocomplet_visitor()">
+                                            <input type="text" id="whome_to_meet" name="whome_to_meet" class="form-control" onKeyUp="autocomplet_visitor()" />
                                             <ul id="whome_to_meet_list" class="hidden"></ul>
                                         </div>
                                         <div class="clear"></div>
@@ -96,7 +89,7 @@
 										<div class="btn btn-default m-t-10 col-sm-2 m-l-15" id="addAccompanying"><i class="glyphicon glyphicon-plus-sign"></i> Add Accompanying</div>
                                         <div class="clear"></div>
                                         
-	                                        <div class="form-group name="accompanyingInput" id="accompanyingInput" >
+	                                        <div class="form-group name=" id="accompanyingInput" >
                                             	<div id="accompanyingInput">
                                                 	<div class="row">&nbsp;</div>
                                                 </div>
@@ -119,7 +112,7 @@
                                         <?php TextField("child Class", "child_class", $child_class, "50","3","form-control required"); ?>
                                         <div class="col-sm-3">
                                         <label>Gender</label>
-                                        	<?php ArrayComboBox("gender", $gender_type, $gender, true, "", "---Select Gender---", "required form-control", "");?>
+                                        	<?php //ArrayComboBox("gender", $gender_type, $gender, true, "", "---Select Gender---", "required form-control", "");?>
                                         </div>
                                         <div class="row">&nbsp;</div>
                                         <?php //TextField("Entry Time", "entry_time", $entry_time, "50","3","form-control required"); ?>
@@ -141,8 +134,12 @@
                         </div>
                         <!-- /.panel-body -->
                     </div>
+                   
                     <!-- /.panel -->
                 </div>
+                 <div class="col-md-5" style="border: 1px solid black; height:350px">
+                    	<div class="">fawad</div>
+                    </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->

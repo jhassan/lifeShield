@@ -1,6 +1,4 @@
 <?php
-	
-	session_start();
 	ob_start();
 	include_once('config.php');
 	include_once('functions.php');
@@ -8,11 +6,12 @@
 	include_once('accounts.php');*/  
 	
 	$action = $_REQUEST['action'];
+	print_r($action); die;
 	$nUserId = $_SESSION["nUserId"];
 	$strDate = date("Y-m-d");
 	// Upload Images
 	$folderName = "uploads/";
-	
+		
 	switch($action)
 	{
 		// EMployee
@@ -125,7 +124,7 @@
 		/*=========================================================================================================================*/
 		
 		case "UpadeteExitTime":
-		print_r('aa'); exit;
+		print_r('jjjjj'); die;
 			
 			if(empty($_POST['nUpadeteExitTime'])){
 				$arr = array(
@@ -158,6 +157,40 @@
 		/*=========================================================================================================================*/
 		
 		
+		/*=========================================================================================================================*/
+		
+		case "AttandanceReport":
+		print_r('jjjjj'); die;
+			
+			if(empty($_POST['nUpadeteExitTime'])){
+				$arr = array(
+						'emp_name'=>$_POST['emp_name'],
+						'emp_department'=>$_POST['emp_department'],
+						'emp_vehicle'=>$_POST['emp_vehicle'],
+						'entry_time'=>date('H:i:s'),
+						'exit_time'=>$_POST['exit_time'],
+					);
+			}else{
+				$arr = array(
+						'emp_name'=>$_POST['emp_name'],
+						'emp_department'=>$_POST['emp_department'],
+						'emp_vehicle'=>$_POST['emp_vehicle'],
+						'entry_time'=>date('H:i:s'),
+						'exit_time'=>$_POST['exit_time'],
+					);
+			}
+				//print_r($arr);		die;
+			if(empty($_POST['nEmployeeID']))
+				$nLastID = InsertRec("emp_rec", $arr);
+			else
+			{
+				$nLastID = UpdateRec('emp_rec', "emp_rec_id = '".$_POST['nEmployeeID']."'",$arr);
+				$nLastID = $_POST['nEmployeeID'];
+			}
+			header("Location: reports");
+			//}
+		break;
+		/*=========================================================================================================================*/
 		
 		
 		// Delete Air Lines

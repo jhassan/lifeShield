@@ -261,24 +261,7 @@
 	  border: 1px solid #4778d9!important;
 
 	}
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
 	/* Useless styles, just for demo design */
-
-	
-
-	
 
 	.txtcenter {
 

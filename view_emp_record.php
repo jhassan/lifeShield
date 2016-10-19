@@ -1,5 +1,6 @@
-<?php include_once('top.php');
-include_once('config.php');
+<?php 
+	include_once('top.php');
+	include_once('config.php');
 ?>
 
 
@@ -114,19 +115,12 @@ include_once('config.php');
 
                                             <td class="center"><?php echo $row['entry_time'];?></td>
 
-                                            <td class="center"><?php if(empty($row['exit_time'])){?>
-                                            				<span name="exit_time" id="exit_time" style="cursor:pointer">Exit time</span>
-<!--														<form role="form" action="action.php" method="post">
-                        	                                <input type="hidden" name="action" id="action" value="UpadeteExitTime" />
-												            <input type="hidden" name="nUpadeteExitTime" id="nUpadeteExitTime" value="<?php echo $row['emp_rec_id']; ?>" />
-                                            				<a href="<?php //echo "http://lifeshield.pakcappellos.com/action.php/UpadeteExitTime";?>" name="exit_time">Exit time</a>
-                                                        </form>
--->                                                            
-																<?php }else{ echo $row['exit_time'];}?></td>
-
-<!--                                            <td class="center"><a href="add_user?id=<?php //echo $row['user_id'];?>"><img height="16" width="16" src="../images/edit.png" alt="Edit"></a>&nbsp;&nbsp;&nbsp;<a id="<?php echo $row['staf_id'];?>" class='clsDelete'><img data-target="#myModal" data-toggle="modal" src="../images/delete.png" height="16" width="16" alt="Delete"></a></td>-->                                        </tr>
-
-									<?php } ?>
+                                            <td class="center">
+												<?php if(empty($row['exit_time'])){?>
+                                                    <span name="exit_time" class="exit_time" id="<?php echo $row['emp_rec_id'];?>" style="cursor:pointer" onClick="UpadateExitTime()"><u>Exit time</u></span>
+                                                <?php }else{ echo $row['exit_time'];}?>
+                                            </td>
+											<?php } ?>
 
                                         
 

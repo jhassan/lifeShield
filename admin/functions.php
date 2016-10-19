@@ -2488,7 +2488,9 @@
 
 		// echo $_SERVER["SCRIPT_NAME"]."==========".$strLoginScriptPath; die;
 
-		$strWhere = "user_name = '" . $_SESSION["strLogin"] . "' and user_password = '" . $_SESSION["strPassword"] . "'";
+		$strWhere = "user_name = '" . $_SESSION["strLogin"] . "' and user_password = '" . $_SESSION["strPassword"] . "' and (user_type = 1 or user_type = 3)";
+
+
 
 		$rstRow = GetRecord("tbluser", $strWhere);
 

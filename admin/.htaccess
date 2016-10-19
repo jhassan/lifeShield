@@ -1,0 +1,52 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^index$ index.php [L]
+RewriteRule ^index/(.*)$ ^index.php?error=1&%{QUERY_STRING} [R]
+
+RewriteRule home$ home.php [L]
+RewriteRule logout$ logout.php [L]
+
+RewriteRule ^users/email$ users.php?msg=email
+RewriteRule ^users/login$ users.php?msg=login
+RewriteRule ^users/(.*)$ users.php?id=$1&%{QUERY_STRING} [R]
+
+
+RewriteRule ^daily_attendance$ daily_attendance.php [L]
+RewriteRule ^monthly_attendance$ monthly_attendance.php [L]
+
+RewriteRule ^add_user$ add_user.php [L]
+RewriteRule ^view_user$ view_user.php [L]
+
+
+RewriteRule ^add_chief_record$ add_chief_record.php [L]
+RewriteRule ^view_chief_record$ view_chief_record.php [L]
+RewriteRule ^previous_chief_record$ previous_chief_record.php [L]
+
+
+RewriteRule ^add_sec_off$ add_sec_off.php [L]
+RewriteRule ^view_sec_off$ view_sec_off.php [L]
+
+RewriteRule ^add_emp$ add_emp.php [L]
+RewriteRule ^view_emp$ view_emp.php [L]
+
+
+RewriteRule ^add_staf_emp$ add_staf_emp.php [L]
+RewriteRule ^view_staf_emp$ view_staf_emp.php [L]
+
+RewriteRule ^add_department$ add_department.php [L]
+RewriteRule ^view_department$ view_department.php [L]
+
+RewriteRule ^add_designation$ add_designation.php [L]
+RewriteRule ^view_designation$ view_designation.php [L]
+
+RewriteRule ^air_lines/(.*)$ air_lines.php?id=$1&%{QUERY_STRING} [R]
+RewriteRule ^employee_tree$ employee_tree.php [L]
+RewriteRule ^view_air_lines$ view_air_lines.php [L]
+
+RewriteRule ^school_staff$ school_staff.php [L]
+RewriteRule ^view_male_teacher$ view_male_teacher.php [L]
+RewriteRule ^view_female_teacher$ view_female_teacher.php [L]
+RewriteRule ^view_male_students$ view_male_students.php [L]
+RewriteRule ^view_female_students$ view_female_students.php [L]
+

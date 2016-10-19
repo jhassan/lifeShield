@@ -17,12 +17,11 @@
                 
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <?php if($_SESSION['user_type']==2){?>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0">
                         	Computer Operator
-                        <?php }?> <i class="fa fa-caret-down"></i>
+                        <!--<i class="fa fa-caret-down"></i>-->
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
+                    <ul class="hidden dropdown-menu dropdown-user">
                         <li class="hide"><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li class="hide"><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>

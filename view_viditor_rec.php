@@ -1,4 +1,7 @@
-<?php include_once('top.php');?>
+<?php include_once('top.php');
+include_once('config.php');
+
+?>
 
 <body>
 
@@ -14,7 +17,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">View Employee Record</h1>
+                    <h1 class="page-header">View School Record</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -23,7 +26,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Employee Record
+                            School Record
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -45,11 +48,9 @@
                                     <tbody>
        
                                     <?php
-                                    	$SQL = "SELECT emp_rec.*,departments.depart_name FROM emp_rec ORDER BY emp_rec_id DESC
-										INNER Join departments ON departments.depart_id = emp_rec=depart_id";
-    									$result = MySQLQuery($SQL);
+                                    	$SQL = "SELECT * FROM school_rec ORDER BY child_id DESC";			
+    									$result = mysqli_query($conn, $SQL);
     									while($row = mysqli_fetch_array($result)) { // ,MYSQL_ASSOC
-										print_r($row);
 									?>
                                         <tr class="odd gradeX" id="DelID_<?php echo $row['child_id'];?>">
                                             <td class="center"><?php echo $row['child_id'];?></td>
@@ -153,3 +154,4 @@
 </body>
 
 </html>
+`

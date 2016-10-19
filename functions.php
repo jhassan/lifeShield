@@ -1,11 +1,11 @@
 <?
-
+print_r('fawad');//die;
 	//error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	error_reporting(0);
 
 	ini_set("register_globals", 1);
 
-	session_start();
+	//session_start();
 
 	include_once('config.php');
 
@@ -402,7 +402,7 @@
 			$strQuery .= "where $strCriteria;";
 
 		
-		//echo $strQuery; die;
+//		echo $strQuery; die;
 		$nResult = MySQLQuery($strQuery);
 
 
@@ -2477,115 +2477,7 @@
 
 	}
 
-	
-
-	// connect to database
-
-	//MySQLConnect();
-
-	//echo $_SERVER["SCRIPT_NAME"]."==========".$strLoginScriptPath; die;
-
-	$strNewLoginx = $_POST['strNewLoginx'];
-
-	$strNewPassword = $_POST['strNewPassword'];
-
-
-
-	// set login / password as session vars
-
-	$_SESSION["strLogin"] = $strNewLoginx;
-
-	$_SESSION["strPassword"] = md5($strNewPassword);
-
-	if(($_SERVER["SCRIPT_NAME"] != $strLoginScriptPath) && (PHP_SAPI != "cli"))
-
-	{
-
-//		print_r($_SESSION);
-
-//		 echo $_SERVER["SCRIPT_NAME"]."==========".$strLoginScriptPath; die;
-
-		$strWhere = "user_name = '" . $_SESSION["strLogin"] . "' and user_password = '" . $_SESSION["strPassword"] ."'";
-
-		//print_r($_SESSION);die;
-
-		$rstRow = GetRecord("tbluser", $strWhere);
-		//var_dump($rstRow); die;
-		// if we have not found this user
-
-		if(empty($rstRow["user_id"]))
-
-		{
-
-			header("Location: index?error=1");
-
-			exit;
-
-		}
-
-		else
-
-		{
-
-		
-
-		
-
-			$_SESSION["nUserId"] = $rstRow["user_id"];
-
-			$_SESSION["strUserName"] = $rstRow["user_name"];
-
-			$_SESSION["strUserAdmin"] = $rstRow["user_admin"];
-
-//			$_SESSION["nEnableDisable"] = $rstRow["user_disabled"];
-
-			$_SESSION["user_type"] = $rstRow["user_type"];
-
-			header("Location: home");
-
-		}
-
-	}
-
-	else
-
-	{echo "out"; die;}
-
-	
-
-	// Get air line names
-
-	function AirLinesCode($UserID)
-
-	{
-
-		$Code = "";
-
-		$strQuery  = "SELECT tblairlines.* 
-
-						FROM `tbluserairlines` INNER JOIN `tblairlines` 
-
-						ON `tblairlines`.`air_line_id` = `tbluserairlines`.`air_line_id` 
-
-						WHERE `tbluserairlines`.`user_id` = '".(int)$UserID."' ";
-
-		$nResult = MySQLQuery($strQuery);	
-
-		while($rstRow = mysqli_fetch_array($nResult)){
-
-		$Code .= $rstRow["air_line_code"].",";
-
-		}
-
-		return rtrim($Code,",");
-
-	}
-
-	
-
-	
-
-	function MemberName($ID)
+		function MemberName($ID)
 
 	{
 
@@ -2636,5 +2528,81 @@
 		return $diff->format('%y');
 
 	}
+
+
+
+	// connect to database
+
+	//MySQLConnect();
+
+	//echo $_SERVER["SCRIPT_NAME"]."==========".$strLoginScriptPath; die;
+
+	$strNewLoginx = $_POST['strNewLoginx'];
+
+	$strNewPassword = $_POST['strNewPassword'];
+
+//		print_r($strNewLoginx); die;
+
+	// set login / password as session vars
+
+	$_SESSION["strLogin"] = $strNewLoginx;
+
+	$_SESSION["strPassword"] = md5($strNewPassword);
+
+	if(($_SERVER["SCRIPT_NAME"] != $strLoginScriptPath) && (PHP_SAPI != "cli"))
+
+	{
+
+		//print_r($_SESSION); die;
+
+//		 echo $_SERVER["SCRIPT_NAME"]."==========".$strLoginScriptPath; die;
+
+		$strWhere = "user_name = '" . $_SESSION["strLogin"] . "' and user_password = '" . $_SESSION["strPassword"] ."' and user_type = 2";
+
+
+//		print_r($strWhere);die;
+
+		$rstRow = GetRecord("tbluser", $strWhere);
+		//var_dump($rstRow["user_id"]); die;
+		// if we have not found this user
+//print_r($rstRow);die;
+		if(empty($rstRow["user_id"]))
+
+		{
+			
+//echo "login"; die;
+			header("Location: index?error=1");
+
+			exit;
+
+		}
+
+		else
+
+		{
+
+		
+
+		
+
+			$_SESSION["nUserId"] = $rstRow["user_id"];
+
+			$_SESSION["strUserName"] = $rstRow["user_name"];
+
+			$_SESSION["strUserAdmin"] = $rstRow["user_admin"];
+
+//			$_SESSION["nEnableDisable"] = $rstRow["user_disabled"];
+
+			$_SESSION["user_type"] = $rstRow["user_type"];
+
+			header("Location: reports");
+
+		}
+
+	}
+
+	else
+
+	{echo "out"; die;}
 
 ?>

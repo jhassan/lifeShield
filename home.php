@@ -1,5 +1,6 @@
 <?php include_once('top.php');
 include_once('config.php');
+
 //echo($GLOBALS["DB_Server"] . " " . $GLOBALS["DB_Username"] ." ". $GLOBALS["DB_Password"]); die;
 ?>
 <style>
@@ -18,7 +19,6 @@ include_once('config.php');
         
         
 <body>
-
     <div id="wrapper"> 
             <!-- Navigation -->
         
@@ -35,18 +35,29 @@ include_once('config.php');
                 </div>
                 <div class="container">
                    <div class="col-lg-12">
-                        <form action="#">
+					<form role="form" action="action.php" id="myForm" method="post" enctype="multipart/form-data">
+    	                <input type="hidden" name="action" id="action" value="AttandanceReport" />
+			            <input type="hidden" name="nAttandanceReport" id="nAttandanceReport" value="<?php echo $GetID; ?>" />
                         <?php
-                        	$SQL = "SELECT emp_id, emp_name FROM tblemployee ORDER BY emp_id DESC";			
+							$emp = explode("S",$_SESSION["strUserName"]);
+
+                        	$SQL = "SELECT staf_id, staf_name,emp_officer,staf_img_name FROM tblstafemp ORDER BY staf_id DESC";
 							$result = mysqli_query($conn, $SQL);
 							while($row = mysqli_fetch_array($result)) {
-							//print_r(date('g:i A'));exit;
+							$off = explode("O",$row['emp_officer']);
+							
+							if(trim($off[0]) == trim($emp[0])){
+							
 						?>
                           <p>
-                            <input type="checkbox" id="<?php echo $row['emp_id'];?>" />
-                            <label for="<?php echo $row['emp_id'];?>"><?php echo $row['emp_name'];?></label>
+                            <input type="checkbox" id="<?php echo $row['staf_id'];?>" />
+                            <label for="<?php echo $row['staf_id'];?>"><?php echo ucfirst($row['staf_name']);?></label>
                           </p>
-                        <?php } ?>
+                        <?php } } ?>
+                        <div class="clear"></div>
+                        <div class="form-group col-lg-6">
+                            <button type="submit" class="btn btn-default m-t-10">Save</button>
+                        </div>
                         </form>
                     
                     </div>
@@ -60,6 +71,7 @@ include_once('config.php');
 
     </div>
     <!-- /#wrapper -->
+    </div>
 
     <?php include_once('jquery.php');?>
 

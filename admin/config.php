@@ -6,7 +6,7 @@
 
 	$DB_Password = "";
 
-	$DB_DBName = "pakcappe_lifeShield";
+	$DB_DBName = "lifeshield";
 
 	
 

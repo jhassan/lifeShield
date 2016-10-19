@@ -12,9 +12,9 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="home"><i class="fa fa-dashboard"></i> Staff Attandance</a>
-                        </li>
+                        </li>-->
                         <!--Staff Attandance Report End-->
                         
                         <li>
@@ -61,7 +61,11 @@
                             <!-- /.nav-3rd-level 
                         </li> -->
                         <li>
-                            <a href="employee_tree"><i class="fa fa-tree fa-fw"></i>Security Employee Tree</span></a>
+                            <a href="night_visitors"><i class="fa fa-star fa-fw"></i>Night visitor application</span></a>
+                        </li>
+                        
+                        <li>
+                        	<a href="logout"><i class="glyphicon glyphicon-off"></i> Logout</a>
                         </li>
                     </ul>
                 </div>
