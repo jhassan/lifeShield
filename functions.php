@@ -6,7 +6,7 @@
 	ini_set("register_globals", 1);
 	include_once('config.php');
 
-//print_r($_SESSION);
+
 
 	// open a connection with MySQL server
 
@@ -2507,17 +2507,17 @@
 
 	//echo $_SERVER["SCRIPT_NAME"]."==========".$strLoginScriptPath; die;
 
-	$strNewLoginx = $_POST['strNewLoginx'];
+// 	$strNewLoginx = $_POST['strNewLoginx'];
 
-	$strNewPassword = $_POST['strNewPassword'];
+// 	$strNewPassword = $_POST['strNewPassword'];
 
-//		print_r($strNewLoginx); die;
+// //		print_r($strNewLoginx); die;
 
-	// set login / password as session vars
+// 	// set login / password as session vars
 
-	$_SESSION["strLogin"] = $strNewLoginx;
+// 	$_SESSION["strLogin"] = $strNewLoginx;
 
-	$_SESSION["strPassword"] = md5($strNewPassword);
+// 	$_SESSION["strPassword"] = md5($strNewPassword);
 
 	if(($_SERVER["SCRIPT_NAME"] != $strLoginScriptPath) && (PHP_SAPI != "cli"))
 

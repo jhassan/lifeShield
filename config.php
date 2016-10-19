@@ -1,6 +1,6 @@
 <?php
-	error_reporting(0);
-	session_start();
+	// error_reporting(0);
+	// session_start();
 	$DB_Server = "localhost";
 
 	$DB_Username ="root";
