@@ -1,30 +1,55 @@
 Options +FollowSymLinks
+
 RewriteEngine on
 
+
+
 RewriteRule ^index$ index.php [L]
+
 RewriteRule ^index/(.*)$ ^index.php?error=1&%{QUERY_STRING} [R]
 
+
+
 RewriteRule home$ home.php [L]
+
 RewriteRule logout$ logout.php [L]
 
+
+
 RewriteRule ^users/email$ users.php?msg=email
+
 RewriteRule ^users/login$ users.php?msg=login
+
 RewriteRule ^users/(.*)$ users.php?id=$1&%{QUERY_STRING} [R]
 
+
+
 RewriteRule ^add_designation$ add_designation.php [L]
+
 RewriteRule ^view_designation$ view_designation.php [L]
 
 
+
+
+
 RewriteRule ^add_department$ add_department.php [L]
+
 RewriteRule ^view_department$ view_department.php [L]
 
 
+
+
+
 RewriteRule ^employee_tree$ employee_tree.php [L]
+
 RewriteRule ^reports$ reports.php [L]
 
+
+
 RewriteRule ^view_school_rec$ view_school_rec.php [L]
+
 RewriteRule ^ab$ ab.php [L]
+
 RewriteRule ^view_emp_record$ view_emp_record.php [L]
 
-RewriteRule ^night_visitors$ night_visitors.php [L]
-RewriteRule ^view_viditor_rec$ view_viditor_rec.php [L]
+

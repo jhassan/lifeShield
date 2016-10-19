@@ -318,4 +318,4 @@
     <script type="text/javascript" src="js/custom.js"></script>
 
 </head>
-
+<?php include_once('functions.php'); ?>

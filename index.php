@@ -94,7 +94,7 @@
 
                     <div class="panel-body">
 
-                        <form role="form" action="functions.php" method="post" id="LoginForm">
+                        <form role="form" action="login.php" method="post" id="LoginForm">
 
                             <fieldset>
 

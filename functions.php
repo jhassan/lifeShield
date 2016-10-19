@@ -1,15 +1,12 @@
-<?
-print_r('fawad');//die;
-	//error_reporting(E_ERROR | E_WARNING | E_PARSE);
+<?php
+	
+	error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	error_reporting(0);
-
+	session_start();
 	ini_set("register_globals", 1);
-
-	//session_start();
-
 	include_once('config.php');
 
-
+//print_r($_SESSION);
 
 	// open a connection with MySQL server
 
@@ -2477,43 +2474,16 @@ print_r('fawad');//die;
 
 	}
 
-		function MemberName($ID)
 
-	{
+// 	// connect to database
 
-			$strQuery  = "SELECT user_name FROM our_family WHERE user_id = '".(int)$ID."'";
+// 	//MySQLConnect();
 
-			$nResult = MySQLQuery($strQuery);	
+// 	//echo $_SERVER["SCRIPT_NAME"]."==========".$strLoginScriptPath; die;
 
-			$rstRow = mysqli_fetch_array($nResult);
+// 	$strNewLoginx = $_POST['strNewLoginx'];
 
-			$user_name = $rstRow["user_name"];
-
-			return $user_name;
-
-	}
-
-	
-
-	function generateRandomString($length) 
-
-	{
-
-		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-		$charactersLength = strlen($characters);
-
-		$randomString = '';
-
-		for ($i = 0; $i < $length; $i++) {
-
-			$randomString .= $characters[rand(0, $charactersLength - 1)];
-
-		}
-
-		return $randomString;
-
-	}
+// 	$strNewPassword = $_POST['strNewPassword'];
 
 
 
